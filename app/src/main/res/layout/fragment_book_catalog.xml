@@ -4,10 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/vanilla"
-    tools:context=".BookCatalogFragment">
+    tools:context=".catalog.BookCatalogFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_of_books"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
 </FrameLayout>

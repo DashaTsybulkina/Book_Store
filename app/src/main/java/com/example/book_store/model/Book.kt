@@ -1,6 +1,7 @@
 package com.example.book_store.model
 
 import com.squareup.moshi.Json
+import org.jetbrains.annotations.NotNull
 
 data class Book(
     val isbn13: String,
@@ -9,5 +10,4 @@ data class Book(
     val price: String,
     val image: String,
     @Json(name = "url")
-    val link: String
-)
+    val link: String)

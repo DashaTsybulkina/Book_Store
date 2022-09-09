@@ -24,9 +24,9 @@ class BookCatalogRecyclerAdapter() :
 
     override fun onBindViewHolder(holder: BookCatalogViewHolder, position: Int) {
         val book = books[position]
-        holder.itemView.txtBookName.text = book.title
-        holder.itemView.txtBookAuthor.text = book.subtitle
-        holder.itemView.txtBookPrice.text = book.price
+//        holder.itemView.txtBookName.text = book.title
+//        holder.itemView.txtBookAuthor.text = book.subtitle
+//        holder.itemView.txtBookPrice.text = book.price
     }
 
     fun refreshUsers(books: List<Book>) {

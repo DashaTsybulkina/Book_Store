@@ -22,7 +22,7 @@ private val retrofit = Retrofit.Builder()
 interface BookService {
     @GET("new")
     suspend fun getNewBooks():
-            List<Book>
+            NewBooksResponse
 }
 
 object BookApi {

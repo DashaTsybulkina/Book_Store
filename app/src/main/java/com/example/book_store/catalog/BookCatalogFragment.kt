@@ -15,7 +15,6 @@ import com.example.book_store.model.Book
 import kotlinx.android.synthetic.main.fragment_book_catalog.*
 
 class BookCatalogFragment : Fragment() {
-    val bookList = arrayListOf<Book>()
 
    lateinit var viewModel: BookCatalogViewModel
 
@@ -32,8 +31,6 @@ class BookCatalogFragment : Fragment() {
                 adapter.refreshUsers(it)
             }
         })
-
-      //  textView.text = viewModel.response.value
     }
 
     override fun onCreateView(
@@ -41,7 +38,6 @@ class BookCatalogFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_book_catalog, container, false)
-
         viewModel = ViewModelProvider(this)[BookCatalogViewModel::class.java]
       //  context?.getAppComponent()?.inject(this)
         return view

@@ -8,9 +8,9 @@ import kotlinx.coroutines.launch
 
 class BookCatalogViewModel : ViewModel() {
 
-    private val _property = MutableLiveData<List<Book>>()
+    private val _property = MutableLiveData<MutableList<Book>>()
 
-    val property: LiveData<List<Book>>
+    val property: LiveData<MutableList<Book>>
         get() = _property
 
     private val _response = MutableLiveData<String>()
@@ -26,7 +26,7 @@ class BookCatalogViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 val listResult = BookApi.retrofitService.getNewBooks()
-                _response.value = "Success: ${listResult} Mars properties retrieved"
+                _response.value = "Success: $listResult Mars properties retrieved"
                 _property.value = listResult.books
             } catch (e: Exception) {
                 _response.value = "Failure: ${e.message}"

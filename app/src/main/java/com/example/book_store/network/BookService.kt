@@ -6,6 +6,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 private const val API_VERSION = "1.0"
 private const val BASE_URL = "https://api.itbook.store/$API_VERSION/"
@@ -23,6 +24,12 @@ interface BookService {
     @GET("new")
     suspend fun getNewBooks():
             NewBooksResponse
+
+    @GET("search/{query}/{page}")
+    suspend fun getSearchBook(
+        @Path("query") query: String,
+        @Path("page") page: Int
+    ): SearchBookResponse
 }
 
 object BookApi {

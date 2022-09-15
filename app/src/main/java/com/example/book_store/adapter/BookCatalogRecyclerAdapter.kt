@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.catalog_book_item.view.*
 class BookCatalogRecyclerAdapter() :
     RecyclerView.Adapter<BookCatalogRecyclerAdapter.BookCatalogViewHolder>() {
 
-    private var books: List<Book> = ArrayList()
+    private var books: MutableList<Book> = ArrayList()
 
     class BookCatalogViewHolder(private val itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding: CatalogBookItemBinding? = DataBindingUtil.bind(itemView)
@@ -29,13 +29,18 @@ class BookCatalogRecyclerAdapter() :
         holder.binding?.property = book
     }
 
-    fun refreshUsers(books: List<Book>) {
+    fun refreshUsers(books: MutableList<Book>) {
         this.books =books
         notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
         return books.size
+    }
+
+    fun clear() {
+        books.clear()
+        notifyDataSetChanged()
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<Book>() {

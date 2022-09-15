@@ -52,7 +52,8 @@ class SearchFragment : Fragment() {
             setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     query?.let {
-                        setupRecyclerView()
+                        requestFirst(query)
+                        //setupRecyclerView()
                     }
                     return false
                 }
@@ -80,11 +81,6 @@ class SearchFragment : Fragment() {
         currentPage = 1
         recyclerAdapter.clear()
         _viewModel.searchBook(query, currentPage)
-    }
-
-    private fun setupRecyclerView() {
-        currentPage++
-        _viewModel.searchBook(binding.search.query.toString(), currentPage)
     }
 
 }

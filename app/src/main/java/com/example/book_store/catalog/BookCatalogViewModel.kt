@@ -3,7 +3,6 @@ package com.example.book_store.catalog
 import androidx.lifecycle.*
 import com.example.book_store.model.Book
 import com.example.book_store.network.BookApi
-import com.example.book_store.network.NewBooksResponse
 import kotlinx.coroutines.launch
 
 class BookCatalogViewModel : ViewModel() {

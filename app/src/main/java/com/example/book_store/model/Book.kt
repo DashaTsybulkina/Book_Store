@@ -8,5 +8,8 @@ data class Book(
     val subtitle: String,
     val price: String,
     val image: String,
+    val rating:String,
+    val authors:String,
+    val year:String,
     @Json(name = "url")
     val link: String)

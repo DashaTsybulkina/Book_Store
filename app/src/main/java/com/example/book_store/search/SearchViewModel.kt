@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.book_store.model.Book
 import com.example.book_store.network.BookApi
-import com.example.book_store.network.SearchBookResponse
 import kotlinx.coroutines.launch
 
 class SearchViewModel : ViewModel() {

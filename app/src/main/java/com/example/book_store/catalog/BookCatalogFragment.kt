@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.book_store.R
 import com.example.book_store.adapter.BookCatalogRecyclerAdapter
-import com.example.book_store.model.Book
-import kotlinx.android.synthetic.main.fragment_book_catalog.*
 
 class BookCatalogFragment : Fragment() {
 

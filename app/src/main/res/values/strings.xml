@@ -6,4 +6,12 @@
     <string name="name_book">Name of the book</string>
     <string name="price">Rs. 299</string>
     <string name="rating">4.5</string>
+    <string name="ordering">Оформить заказ</string>
+    <string name="empty_cart">В корзине пусто</string>
+    <string name="email">email: cybulkinadara@gmail.com</string>
+    <string name="real_name">Цыбулькина Дарья</string>
+    <string name="phone">375 29 394 05 77</string>
+    <string name="autorisation">ВОЙТИ/ЗАРЕГИСТРИРОВАТЬСЯ</string>
+    <string name="orders">Мои заказы</string>
+    <string name="exit">ВЫЙТИ</string>
 </resources>

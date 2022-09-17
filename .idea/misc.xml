@@ -7,7 +7,8 @@
         <entry key="..\:/Book_Store/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Book_Store/app/src/main/res/layout/catalog_book_item.xml" value="0.264" />
         <entry key="..\:/Book_Store/app/src/main/res/layout/fragment_book_catalog.xml" value="0.2" />
-        <entry key="..\:/Book_Store/app/src/main/res/layout/fragment_profile.xml" value="0.11367753623188406" />
+        <entry key="..\:/Book_Store/app/src/main/res/layout/fragment_cart.xml" value="0.4" />
+        <entry key="..\:/Book_Store/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Book_Store/app/src/main/res/layout/fragment_search.xml" value="0.13958333333333334" />
         <entry key="..\:/Book_Store/app/src/main/res/menu/bottom_nav_menu.xml" value="0.4" />
       </map>

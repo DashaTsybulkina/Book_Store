@@ -14,9 +14,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.book_store.R
 import com.example.book_store.adapter.BookCatalogRecyclerAdapter
+import com.example.book_store.adapter.BookClickHandler
 import com.example.book_store.databinding.FragmentSearchBinding
+import com.example.book_store.model.Book
 
-class SearchFragment : Fragment() {
+class SearchFragment : Fragment(), BookClickHandler {
     val viewModel: SearchViewModel by viewModels()
     private var binding: FragmentSearchBinding? = null
 
@@ -27,6 +29,7 @@ class SearchFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         return inflater.inflate(R.layout.fragment_search, container, false)
     }
 
@@ -35,7 +38,7 @@ class SearchFragment : Fragment() {
 
         binding = FragmentSearchBinding.bind(view)
 
-        recyclerAdapter = BookCatalogRecyclerAdapter()
+        recyclerAdapter = BookCatalogRecyclerAdapter(this)
         binding!!.booksRecyclerView.layoutManager = LinearLayoutManager(activity)
         binding!!.booksRecyclerView.adapter = recyclerAdapter
 
@@ -83,5 +86,9 @@ class SearchFragment : Fragment() {
         currentPage = 1
         recyclerAdapter.clear()
         viewModel.searchBook(query, currentPage)
+    }
+
+    override fun clickedBookItem(book: Book) {
+        TODO("Not yet implemented")
     }
 }

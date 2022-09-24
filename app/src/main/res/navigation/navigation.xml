@@ -7,11 +7,19 @@
     <fragment
         android:id="@+id/bookCatalogFragment"
         android:name="com.example.book_store.catalog.BookCatalogFragment"
-        android:label="Book catalog" />
+        android:label="Book catalog" >
+        <action
+            android:id="@+id/action_bookCatalogFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.book_store.search.SearchFragment"
-        android:label="Search" />
+        android:label="Search" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.example.book_store.cart.CartFragment"
@@ -20,4 +28,13 @@
         android:id="@+id/profileFragment"
         android:name="com.example.book_store.profile.ProfileFragment"
         android:label="Profile" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.book_store.detail.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
 </navigation>

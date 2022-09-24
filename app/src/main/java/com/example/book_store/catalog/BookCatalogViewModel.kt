@@ -8,6 +8,10 @@ import kotlinx.coroutines.launch
 
 class BookCatalogViewModel : ViewModel() {
 
+    private val _navigateToSelectedProperty = MutableLiveData<Book>()
+    val navigateToSelectedProperty: LiveData<Book>
+        get() = _navigateToSelectedProperty
+
     private val _property = MutableLiveData<List<Book>>()
 
     val property: LiveData<List<Book>>
@@ -35,5 +39,9 @@ class BookCatalogViewModel : ViewModel() {
                 Log.d("INTERHET", "no")
             }
         }
+    }
+
+    fun displayPropertyDetails(book: Book) {
+        _navigateToSelectedProperty.value = book
     }
 }

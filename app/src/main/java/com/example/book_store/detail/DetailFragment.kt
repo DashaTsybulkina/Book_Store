@@ -13,6 +13,6 @@ class DetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_delail, container, false)
+        return inflater.inflate(R.layout.fragment_detail, container, false)
     }
 }

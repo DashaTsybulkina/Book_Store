@@ -21,8 +21,7 @@ private val retrofit = Retrofit.Builder()
 
 interface BookService {
     @GET("new")
-    suspend fun getNewBooks():
-            NewBooksResponse
+    suspend fun getNewBooks(): NewBooksResponse
 
     @GET("search/{query}/{page}")
     suspend fun getSearchBook(

@@ -5,6 +5,5 @@ import com.example.book_store.model.Book
 data class NewBooksResponse(
     val error: String,
     val total: String,
-//    val page:String,
-    val books: MutableList<Book>
+    val books: List<Book>
 )

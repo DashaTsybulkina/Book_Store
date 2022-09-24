@@ -17,9 +17,8 @@ import com.example.book_store.adapter.BookCatalogRecyclerAdapter
 import com.example.book_store.databinding.FragmentSearchBinding
 
 class SearchFragment : Fragment() {
-    val _viewModel: SearchViewModel by viewModels()
-    private var _binding: FragmentSearchBinding? = null
-    private val binding get() = _binding!!
+    val viewModel: SearchViewModel by viewModels()
+    private var binding: FragmentSearchBinding? = null
 
     private var currentPage = 1
     lateinit var recyclerAdapter: BookCatalogRecyclerAdapter
@@ -28,32 +27,30 @@ class SearchFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSearchBinding.inflate(inflater, container, false).apply {
-            viewModel = _viewModel
-        }
+        return inflater.inflate(R.layout.fragment_search, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding = FragmentSearchBinding.bind(view)
+
         recyclerAdapter = BookCatalogRecyclerAdapter()
-        _binding!!.booksRecyclerView.layoutManager = LinearLayoutManager(activity)
-        _binding!!.booksRecyclerView.adapter = recyclerAdapter
+        binding!!.booksRecyclerView.layoutManager = LinearLayoutManager(activity)
+        binding!!.booksRecyclerView.adapter = recyclerAdapter
 
-
-        _viewModel.books.observe(viewLifecycleOwner, Observer {
+        viewModel.books.observe(viewLifecycleOwner, Observer {
             it?.let {
                 recyclerAdapter.refreshUsers(it)
             }
         })
 
-        return binding.root
-    }
+        binding!!.search.apply {
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.lifecycleOwner = this
-        binding.search.apply {
             setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     query?.let {
                         requestFirst(query)
-                        //setupRecyclerView()
                     }
                     return false
                 }
@@ -77,10 +74,14 @@ class SearchFragment : Fragment() {
         imm?.showSoftInput(view, 0)
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
+
     private fun requestFirst(query: String) {
         currentPage = 1
         recyclerAdapter.clear()
-        _viewModel.searchBook(query, currentPage)
+        viewModel.searchBook(query, currentPage)
     }
-
 }

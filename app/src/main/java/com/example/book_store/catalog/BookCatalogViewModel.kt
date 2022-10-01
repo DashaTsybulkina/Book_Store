@@ -29,19 +29,12 @@ class BookCatalogViewModel : ViewModel() {
     fun getBook() {
         viewModelScope.launch {
             try {
-                Log.d("INTERHET", BookApi.retrofitService.toString())
                 val listResult = BookApi.retrofitService.getNewBooks()
-                Log.d("INTERHET", "good")
                 _response.value = "Success: $listResult Mars properties retrieved"
                 _property.value = listResult.books
             } catch (e: Exception) {
                 _response.value = "Failure: ${e.message}"
-                Log.d("INTERHET", "no")
             }
         }
-    }
-
-    fun displayPropertyDetails(book: Book) {
-        _navigateToSelectedProperty.value = book
     }
 }

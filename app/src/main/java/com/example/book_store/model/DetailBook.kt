@@ -1,6 +1,5 @@
 package com.example.book_store.model
 
-import androidx.annotation.NonNull
 import com.squareup.moshi.Json
 
 data class DetailBook(

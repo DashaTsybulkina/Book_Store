@@ -1,5 +1,6 @@
 package com.example.book_store.network
 
+import com.example.book_store.model.DetailBook
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -28,6 +29,9 @@ interface BookService {
         @Path("query") query: String,
         @Path("page") page: Int
     ): SearchBookResponse
+
+    @GET("books/{isbn13}")
+    suspend fun getBookInformation(@Path("isbn13") isbn13: String): DetailBook
 }
 
 object BookApi {

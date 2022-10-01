@@ -1,7 +1,6 @@
 package com.example.book_store.catalog
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,13 +10,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.book_store.R
 import com.example.book_store.adapter.BookCatalogRecyclerAdapter
 import com.example.book_store.adapter.BookClickHandler
 import com.example.book_store.databinding.FragmentBookCatalogBinding
-import com.example.book_store.databinding.FragmentSearchBinding
 import com.example.book_store.model.Book
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class BookCatalogFragment : Fragment(), BookClickHandler {
 
@@ -51,8 +49,7 @@ class BookCatalogFragment : Fragment(), BookClickHandler {
     }
 
     override fun clickedBookItem(book: Book) {
-        Log.d("TAG", book.title)
-        val bundle = bundleOf("title" to book.title)
+        val bundle = bundleOf("isbn13" to book.isbn13)
         findNavController().navigate(R.id.detailFragment, bundle)
     }
 }

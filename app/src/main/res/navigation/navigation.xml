@@ -33,7 +33,7 @@
         android:name="com.example.book_store.detail.DetailFragment"
         android:label="DetailFragment" >
         <argument
-            android:name="title"
+            android:name="isbn13"
             app:argType="string"
             android:defaultValue='""' />
     </fragment>

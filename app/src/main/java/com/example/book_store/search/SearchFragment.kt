@@ -8,8 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.widget.SearchView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.book_store.R
@@ -17,6 +19,7 @@ import com.example.book_store.adapter.BookCatalogRecyclerAdapter
 import com.example.book_store.adapter.BookClickHandler
 import com.example.book_store.databinding.FragmentSearchBinding
 import com.example.book_store.model.Book
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class SearchFragment : Fragment(), BookClickHandler {
     val viewModel: SearchViewModel by viewModels()
@@ -29,7 +32,6 @@ class SearchFragment : Fragment(), BookClickHandler {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.fragment_search, container, false)
     }
 
@@ -89,6 +91,7 @@ class SearchFragment : Fragment(), BookClickHandler {
     }
 
     override fun clickedBookItem(book: Book) {
-        TODO("Not yet implemented")
+        val bundle = bundleOf("isbn13" to book.isbn13)
+        findNavController().navigate(R.id.detailFragment, bundle)
     }
 }

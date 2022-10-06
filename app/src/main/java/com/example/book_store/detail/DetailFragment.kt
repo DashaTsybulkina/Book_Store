@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
@@ -56,6 +57,11 @@ class DetailFragment : Fragment() {
             _binding!!.txtDetailPrice.text = it.price
             _binding!!.txtDetailAboutBook.text = it.desc
         })
+
+        _binding!!.buttonDetailBuy.setOnClickListener {
+            _viewModel.saveBook()
+            Toast.makeText(context, "Book added to cart", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun setImage(imageView: ImageView, url: String?) {

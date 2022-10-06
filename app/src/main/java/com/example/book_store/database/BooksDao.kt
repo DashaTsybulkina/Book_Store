@@ -1,5 +1,6 @@
 package com.example.book_store.database
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -14,7 +15,7 @@ interface BooksDao  {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(book: DetailBook?)
 
-    @Query("SELECT * FROM detailbook WHERE isbn13 = :isbn13")
+    @Query("SELECT * FROM detailBook WHERE isbn13 = :isbn13")
     fun getDetailBook(isbn13: String?): DetailBook?
 
     @Query("SELECT * FROM detailbook ORDER BY price ASC")
@@ -25,4 +26,7 @@ interface BooksDao  {
 
     @Query("SELECT * FROM detailbook ORDER BY year DESC")
     fun getFavoriteOrderByPublished(): List<DetailBook>
+
+    @Query("SELECT * FROM detailBook")
+    fun getAllBooks():List<DetailBook>
 }

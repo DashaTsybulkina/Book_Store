@@ -27,6 +27,9 @@
     <string name="isbn10" formatted="false">isbn10 : %s</string>
     <string name="isbn13" formatted="false">isbn13 : %s</string>
     <string name="desc" formatted="false">Description : %s</string>
-    <string name="add_cart">Добавить в корзину</string>
+    <string name="add_cart">Add to basket</string>
+
+    <string name="save_to_cart">Book added to cart</string>
+
 
 </resources>

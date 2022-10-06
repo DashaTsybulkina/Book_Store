@@ -38,5 +38,7 @@ data class DetailBook(
     val image: String,
     @ColumnInfo(name = "link")
     @Json(name = "url")
-    val link: String
+    val link: String,
+    @ColumnInfo(name = "isAddCart")
+    val isAddCart: Boolean = false,
 )

@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.book_store.R
 import com.example.book_store.adapter.BookCatalogRecyclerAdapter
 import com.example.book_store.adapter.BookClickHandler
+import com.example.book_store.catalog.BookApiStatus
 import com.example.book_store.databinding.FragmentSearchBinding
 import com.example.book_store.model.Book
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -72,6 +73,22 @@ class SearchFragment : Fragment(), BookClickHandler {
             }
             onActionViewExpanded()
         }
+
+        viewModel.status.observe(viewLifecycleOwner, Observer<BookApiStatus>{
+            when(it){
+                BookApiStatus.LOADING-> {
+                    binding!!.statusImage.visibility = View.VISIBLE
+                    binding!!.statusImage.setImageResource(R.drawable.loading_animation)
+                }
+                BookApiStatus.ERROR -> {
+                    binding!!.statusImage.visibility = View.VISIBLE
+                    binding!!.statusImage.setImageResource(R.drawable.ic_connection_error)
+                }
+                BookApiStatus.DONE -> {
+                    binding!!.statusImage.visibility = View.GONE
+                }
+            }
+        })
     }
 
     private fun showInputMethod(view: View) {

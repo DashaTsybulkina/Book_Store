@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.book_store.R
+import com.example.book_store.catalog.BookApiStatus
 import com.example.book_store.databinding.FragmentBookCatalogBinding
 import com.example.book_store.databinding.FragmentDetailBinding
 import com.example.book_store.model.Book
@@ -56,6 +57,22 @@ class DetailFragment : Fragment() {
             _binding!!.txtDetailAuthor.text = it.authors
             _binding!!.txtDetailPrice.text = it.price
             _binding!!.txtDetailAboutBook.text = it.desc
+        })
+
+        _viewModel.status.observe(viewLifecycleOwner, Observer<BookApiStatus> {
+            when(it){
+                BookApiStatus.LOADING-> {
+                    _binding!!.statusImage.visibility = View.VISIBLE
+                    _binding!!.statusImage.setImageResource(R.drawable.loading_animation)
+                }
+                BookApiStatus.ERROR -> {
+                    _binding!!.statusImage.visibility = View.VISIBLE
+                    _binding!!.statusImage.setImageResource(R.drawable.ic_connection_error)
+                }
+                BookApiStatus.DONE -> {
+                    _binding!!.statusImage.visibility = View.GONE
+                }
+            }
         })
 
         _binding!!.buttonDetailBuy.setOnClickListener {

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.book_store.catalog.BookApiStatus
 import com.example.book_store.model.Book
 import com.example.book_store.network.BookApi
 import kotlinx.coroutines.launch
@@ -14,9 +15,9 @@ class SearchViewModel : ViewModel() {
     private val bookList = ArrayList<Book>()
     private val isLastPage = MutableLiveData<Boolean>()
 
-    private val _response = MutableLiveData<String>()
-    val response: LiveData<String>
-        get() = _response
+    private val _status = MutableLiveData<BookApiStatus>()
+    val status: LiveData<BookApiStatus>
+        get() = _status
 
     private var showNoData = MutableLiveData<Boolean>()
 
@@ -26,6 +27,7 @@ class SearchViewModel : ViewModel() {
         }
         viewModelScope.launch {
             try {
+                _status.value = BookApiStatus.LOADING
                 val result = BookApi.retrofitService.getSearchBook(query, page)
                 if (result.page != null && result.totalNum != null) {
                     isLastPage.value =
@@ -33,9 +35,9 @@ class SearchViewModel : ViewModel() {
                 }
                 bookList.addAll(result.books)
                 books.value = bookList
-                _response.value = "Success!"
+                _status.value = BookApiStatus.DONE
             } catch (e: Exception) {
-                _response.value = "Failure: ${e.message}"
+                _status.value = BookApiStatus.ERROR
             }
         }
 

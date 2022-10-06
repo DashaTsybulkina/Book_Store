@@ -33,6 +33,22 @@ class BookCatalogFragment : Fragment(), BookClickHandler {
         viewModel.property.observe(viewLifecycleOwner, Observer<List<Book>> {
             adapter.refreshUsers(it)
         })
+
+        viewModel.status.observe(viewLifecycleOwner, Observer<BookApiStatus>{
+            when(it){
+                BookApiStatus.LOADING-> {
+                    binding!!.statusImage.visibility = View.VISIBLE
+                    binding!!.statusImage.setImageResource(R.drawable.loading_animation)
+                }
+                BookApiStatus.ERROR -> {
+                    binding!!.statusImage.visibility = View.VISIBLE
+                    binding!!.statusImage.setImageResource(R.drawable.ic_connection_error)
+                }
+                BookApiStatus.DONE -> {
+                    binding!!.statusImage.visibility = View.GONE
+                }
+            }
+        })
     }
 
     override fun onCreateView(

@@ -1,12 +1,12 @@
-package com.example.book_store.search
+package com.example.book_store.ui.search
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.book_store.catalog.BookApiStatus
-import com.example.book_store.model.Book
+import com.example.book_store.data.model.Book
 import com.example.book_store.network.BookApi
+import com.example.book_store.ui.catalog.BookApiStatus
 import kotlinx.coroutines.launch
 
 class SearchViewModel : ViewModel() {

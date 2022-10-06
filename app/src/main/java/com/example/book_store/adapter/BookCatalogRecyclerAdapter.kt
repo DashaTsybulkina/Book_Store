@@ -1,19 +1,15 @@
 package com.example.book_store.adapter
 
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.book_store.R
+import com.example.book_store.data.model.Book
 import com.example.book_store.databinding.CatalogBookItemBinding
-import com.example.book_store.model.Book
 
 class BookCatalogRecyclerAdapter(
     private val clickHandler: BookClickHandler
@@ -61,7 +57,7 @@ class BookCatalogRecyclerAdapter(
     override fun getItemCount() = books.size
 
     fun clear() {
-     //   books.clear()
+       // books.clear()
         notifyDataSetChanged()
     }
 

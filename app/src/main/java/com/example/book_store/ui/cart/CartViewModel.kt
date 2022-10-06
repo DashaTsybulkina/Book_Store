@@ -1,10 +1,10 @@
-package com.example.book_store.cart
+package com.example.book_store.ui.cart
 
 import android.app.Application
 import androidx.lifecycle.*
 import com.example.book_store.data.BooksRepository
+import com.example.book_store.data.model.DetailBook
 import com.example.book_store.database.LocalDB
-import com.example.book_store.model.DetailBook
 import kotlinx.coroutines.launch
 
 class CartViewModel(val app: Application) : AndroidViewModel(app) {

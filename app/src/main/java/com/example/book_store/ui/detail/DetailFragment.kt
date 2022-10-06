@@ -1,4 +1,4 @@
-package com.example.book_store.detail
+package com.example.book_store.ui.detail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,11 +11,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.book_store.R
-import com.example.book_store.catalog.BookApiStatus
-import com.example.book_store.databinding.FragmentBookCatalogBinding
+import com.example.book_store.data.model.DetailBook
 import com.example.book_store.databinding.FragmentDetailBinding
-import com.example.book_store.model.Book
-import com.example.book_store.model.DetailBook
+import com.example.book_store.ui.catalog.BookApiStatus
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private const val ARG_TITLE = "isbn13"

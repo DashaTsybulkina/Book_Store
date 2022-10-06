@@ -1,7 +1,7 @@
-package com.example.book_store.catalog
+package com.example.book_store.ui.catalog
 
 import androidx.lifecycle.*
-import com.example.book_store.model.Book
+import com.example.book_store.data.model.Book
 import com.example.book_store.network.BookApi
 import kotlinx.coroutines.launch
 

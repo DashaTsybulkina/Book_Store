@@ -1,4 +1,4 @@
-package com.example.book_store.catalog
+package com.example.book_store.ui.catalog
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,9 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.book_store.R
 import com.example.book_store.adapter.BookCatalogRecyclerAdapter
 import com.example.book_store.adapter.BookClickHandler
+import com.example.book_store.data.model.Book
 import com.example.book_store.databinding.FragmentBookCatalogBinding
-import com.example.book_store.model.Book
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class BookCatalogFragment : Fragment(), BookClickHandler {
 

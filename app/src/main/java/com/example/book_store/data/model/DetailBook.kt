@@ -1,4 +1,4 @@
-package com.example.book_store.model
+package com.example.book_store.data.model
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo

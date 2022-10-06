@@ -6,8 +6,8 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.book_store.R
+import com.example.book_store.data.model.DetailBook
 import com.example.book_store.databinding.CartItemBinding
-import com.example.book_store.model.DetailBook
 
 class CartAdapter(): RecyclerView.Adapter<CartAdapter.CartViewHolder>()  {
 

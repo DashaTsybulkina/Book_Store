@@ -1,6 +1,6 @@
 package com.example.book_store.network
 
-import com.example.book_store.model.Book
+import com.example.book_store.data.model.Book
 
 class SearchBookResponse (
     val error: String,

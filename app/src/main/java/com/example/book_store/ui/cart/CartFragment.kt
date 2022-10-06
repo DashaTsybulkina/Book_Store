@@ -1,4 +1,4 @@
-package com.example.book_store.cart
+package com.example.book_store.ui.cart
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,13 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.book_store.R
-import com.example.book_store.adapter.BookCatalogRecyclerAdapter
 import com.example.book_store.adapter.CartAdapter
-import com.example.book_store.catalog.BookCatalogViewModel
-import com.example.book_store.databinding.FragmentBookCatalogBinding
+import com.example.book_store.data.model.DetailBook
 import com.example.book_store.databinding.FragmentCartBinding
-import com.example.book_store.model.Book
-import com.example.book_store.model.DetailBook
 
 class CartFragment : Fragment() {
 

@@ -1,11 +1,10 @@
 package com.example.book_store.database
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.book_store.model.DetailBook
+import com.example.book_store.data.model.DetailBook
 
 @Dao
 interface BooksDao  {

@@ -1,4 +1,4 @@
-package com.example.book_store.search
+package com.example.book_store.ui.search
 
 import android.content.Context
 import android.os.Bundle
@@ -13,14 +13,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.book_store.R
 import com.example.book_store.adapter.BookCatalogRecyclerAdapter
 import com.example.book_store.adapter.BookClickHandler
-import com.example.book_store.catalog.BookApiStatus
+import com.example.book_store.data.model.Book
 import com.example.book_store.databinding.FragmentSearchBinding
-import com.example.book_store.model.Book
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.book_store.ui.catalog.BookApiStatus
 
 class SearchFragment : Fragment(), BookClickHandler {
     val viewModel: SearchViewModel by viewModels()
@@ -45,7 +43,7 @@ class SearchFragment : Fragment(), BookClickHandler {
         binding!!.booksRecyclerView.layoutManager = LinearLayoutManager(activity)
         binding!!.booksRecyclerView.adapter = recyclerAdapter
 
-        viewModel.books.observe(viewLifecycleOwner, Observer {
+        viewModel.books.observe(viewLifecycleOwner, Observer<List<Book>> {
             it?.let {
                 recyclerAdapter.refreshUsers(it)
             }
@@ -85,6 +83,9 @@ class SearchFragment : Fragment(), BookClickHandler {
                     binding!!.statusImage.setImageResource(R.drawable.ic_connection_error)
                 }
                 BookApiStatus.DONE -> {
+                    binding!!.statusImage.visibility = View.GONE
+                }
+                else -> {
                     binding!!.statusImage.visibility = View.GONE
                 }
             }

@@ -1,8 +1,8 @@
 package com.example.book_store.data
 
 import android.util.Log
+import com.example.book_store.data.model.DetailBook
 import com.example.book_store.database.BooksDao
-import com.example.book_store.model.DetailBook
 import com.example.book_store.network.BookApi
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

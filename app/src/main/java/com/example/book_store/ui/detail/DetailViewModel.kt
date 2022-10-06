@@ -1,13 +1,12 @@
-package com.example.book_store.detail
+package com.example.book_store.ui.detail
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.*
-import com.example.book_store.catalog.BookApiStatus
 import com.example.book_store.data.BooksRepository
+import com.example.book_store.data.model.DetailBook
 import com.example.book_store.database.LocalDB
-import com.example.book_store.model.DetailBook
-import com.example.book_store.network.BookApi
+import com.example.book_store.ui.catalog.BookApiStatus
 import kotlinx.coroutines.launch
 
 class DetailViewModel(val app:Application):AndroidViewModel(app) {

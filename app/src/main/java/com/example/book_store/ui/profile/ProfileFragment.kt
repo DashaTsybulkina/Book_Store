@@ -1,4 +1,4 @@
-package com.example.book_store.profile
+package com.example.book_store.ui.profile
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

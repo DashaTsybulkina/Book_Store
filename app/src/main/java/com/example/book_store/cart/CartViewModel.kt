@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.*
 import com.example.book_store.data.BooksRepository
 import com.example.book_store.database.LocalDB
-import com.example.book_store.model.DetailBook
+import com.example.book_store.data.model.DetailBook
 import kotlinx.coroutines.launch
 
 class CartViewModel(val app: Application) : AndroidViewModel(app) {
@@ -23,7 +23,7 @@ class CartViewModel(val app: Application) : AndroidViewModel(app) {
     fun getBook() {
         viewModelScope.launch {
             val listResult = repository.getBooksCart()
-            _books.value = listResult
+            _books.value = listResult!!
         }
     }
 }

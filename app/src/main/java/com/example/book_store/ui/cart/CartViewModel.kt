@@ -6,6 +6,7 @@ import com.example.book_store.data.BooksRepository
 import com.example.book_store.data.model.DetailBook
 import com.example.book_store.database.LocalDB
 import kotlinx.coroutines.launch
+import java.text.FieldPosition
 
 class CartViewModel(val app: Application) : AndroidViewModel(app) {
 
@@ -23,7 +24,16 @@ class CartViewModel(val app: Application) : AndroidViewModel(app) {
     fun getBook() {
         viewModelScope.launch {
             val listResult = repository.getBooksCart()
-            _books.value = listResult
+            if (listResult != null){
+                _books.value = listResult!!
+            }
+        }
+    }
+
+    fun updateCount (book:DetailBook, position: Int, value:Int){
+        viewModelScope.launch {
+            repository.updateCount(book.isbn13, value)
+            _books.value!!.get(position).count = value
         }
     }
 }

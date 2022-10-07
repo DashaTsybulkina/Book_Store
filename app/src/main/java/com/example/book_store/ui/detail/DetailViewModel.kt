@@ -10,7 +10,7 @@ import com.example.book_store.ui.catalog.BookApiStatus
 import kotlinx.coroutines.launch
 
 class DetailViewModel(val app:Application):AndroidViewModel(app) {
-    private val _book = MutableLiveData<DetailBook>()
+    private var _book = MutableLiveData<DetailBook>()
     val book: LiveData<DetailBook> = _book
 
     private val _status = MutableLiveData<BookApiStatus>()
@@ -40,6 +40,7 @@ class DetailViewModel(val app:Application):AndroidViewModel(app) {
     }
 
     fun saveBook (){
+        _book.value!!.count  = 1
         val book = _book.value
         if (book != null) {
             viewModelScope.launch {

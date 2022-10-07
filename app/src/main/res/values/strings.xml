@@ -30,6 +30,7 @@
     <string name="add_cart">Add to basket</string>
 
     <string name="save_to_cart">Book added to cart</string>
+    <string name="ordering">Оформить заказ</string>
 
 
 </resources>

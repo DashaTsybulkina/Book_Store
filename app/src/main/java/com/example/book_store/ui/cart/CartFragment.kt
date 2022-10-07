@@ -29,7 +29,7 @@ class CartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentCartBinding.bind(view);
 
-        val adapter = CartAdapter()
+        val adapter = CartAdapter(viewModel)
         binding!!.booksCart.layoutManager = LinearLayoutManager(activity)
         binding!!.booksCart.adapter = adapter
 

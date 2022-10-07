@@ -39,7 +39,7 @@ class BooksRepository(
         }
     }
 
-    suspend fun getBooksCart(): List<DetailBook>  =
+    suspend fun getBooksCart(): List<DetailBook>?  =
         withContext(ioDispatcher) {
             var books:List<DetailBook>? = null
             try {
@@ -47,8 +47,18 @@ class BooksRepository(
             } catch (e: Exception) {
                 Log.e(TAG, "failed getBook: ${e.message} ")
             }
-            return@withContext books!!
+            return@withContext books
         }
+
+    suspend fun updateCount(isbn13: String, count:Int){
+        withContext(ioDispatcher){
+            try {
+                booksDao.updateCount(isbn13, count)
+            }catch (e: Exception) {
+                Log.e("TAG", "failed update : ${e.message}")
+            }
+        }
+    }
 
     companion object {
         private const val TAG = "BooksRepository"

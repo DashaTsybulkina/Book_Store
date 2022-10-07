@@ -28,4 +28,7 @@ interface BooksDao  {
 
     @Query("SELECT * FROM detailBook")
     fun getAllBooks():List<DetailBook>
+
+    @Query("UPDATE detailBook SET count = :amount  WHERE isbn13 = :isbn13")
+    fun updateCount(isbn13: String?, amount:Int)
 }

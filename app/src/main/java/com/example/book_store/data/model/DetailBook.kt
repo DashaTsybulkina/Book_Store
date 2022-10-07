@@ -40,5 +40,7 @@ data class DetailBook(
     @Json(name = "url")
     val link: String,
     @ColumnInfo(name = "isAddCart")
-    val isAddCart: Boolean = false,
+    var isAddCart: Boolean = false,
+    @ColumnInfo(name = "count")
+    var count: Int = 0,
 )

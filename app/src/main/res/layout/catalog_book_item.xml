@@ -11,7 +11,7 @@
         android:id="@+id/llContent"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:background="#A3F1F5E0"
+        android:background="#f2f3f4"
         android:orientation="horizontal">
 
         <ImageView

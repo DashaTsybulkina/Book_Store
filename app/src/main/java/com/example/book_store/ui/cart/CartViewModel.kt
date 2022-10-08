@@ -4,20 +4,20 @@ import android.app.Application
 import androidx.lifecycle.*
 import com.example.book_store.data.BooksRepository
 import com.example.book_store.data.model.DetailBook
-import com.example.book_store.database.LocalDB
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import java.text.FieldPosition
+import javax.inject.Inject
 
-class CartViewModel(val app: Application) : AndroidViewModel(app) {
+class CartViewModel @Inject constructor(val repository: BooksRepository ) : ViewModel() {
 
-    private val repository: BooksRepository
+  //  private val repository: BooksRepository
 
     private val _books = MutableLiveData<List<DetailBook>>()
     val books: LiveData<List<DetailBook>> = _books
 
     init {
-        val bookDB = LocalDB.createDatabase(app).booksDao()
-        repository = BooksRepository(bookDB)
+//        val bookDB = LocalDB.createDatabase(app).booksDao()
+//        repository = BooksRepository(bookDB)
         getBook()
     }
 

@@ -15,10 +15,11 @@ import com.example.book_store.adapter.BookCatalogRecyclerAdapter
 import com.example.book_store.adapter.BookClickHandler
 import com.example.book_store.data.model.Book
 import com.example.book_store.databinding.FragmentBookCatalogBinding
+import com.example.book_store.getAppComponent
 
 class BookCatalogFragment : Fragment(), BookClickHandler {
 
-    val viewModel: BookCatalogViewModel by viewModels()
+    val viewModel: BookCatalogViewModel by viewModels{context?.getAppComponent()!!.catalogFactory() }
     private var binding: FragmentBookCatalogBinding? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

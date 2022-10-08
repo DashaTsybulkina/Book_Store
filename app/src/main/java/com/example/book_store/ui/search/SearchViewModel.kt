@@ -4,12 +4,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.book_store.data.BooksRepository
 import com.example.book_store.data.model.Book
-import com.example.book_store.network.BookApi
 import com.example.book_store.ui.catalog.BookApiStatus
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SearchViewModel : ViewModel() {
+class SearchViewModel @Inject constructor(val repository: BooksRepository) : ViewModel() {
 
     val books = MutableLiveData<MutableList<Book>>()
     private val bookList = ArrayList<Book>()
@@ -28,7 +30,7 @@ class SearchViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 _status.value = BookApiStatus.LOADING
-                val result = BookApi.retrofitService.getSearchBook(query, page)
+                val result = repository.getSearchBook(query, page)
                 if (result.page != null && result.totalNum != null) {
                     isLastPage.value =
                         result.page.toInt().times(10) * 10 >= result.totalNum.toInt()

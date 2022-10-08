@@ -9,16 +9,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 private const val API_VERSION = "1.0"
-private const val BASE_URL = "https://api.itbook.store/$API_VERSION/"
-
-private val moshi = Moshi.Builder()
-    .add(KotlinJsonAdapterFactory())
-    .build()
-
-private val retrofit = Retrofit.Builder()
-    .addConverterFactory(MoshiConverterFactory.create(moshi))
-    .baseUrl(BASE_URL)
-    .build()
+const val BASE_URL = "https://api.itbook.store/$API_VERSION/"
 
 interface BookService {
     @GET("new")
@@ -33,9 +24,3 @@ interface BookService {
     @GET("books/{isbn13}")
     suspend fun getBookInformation(@Path("isbn13") isbn13: String): DetailBook
 }
-
-object BookApi {
-    val retrofitService : BookService by lazy {
-        retrofit.create(BookService::class.java) }
-}
-

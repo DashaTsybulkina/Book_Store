@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.example.book_store.R
 import com.example.book_store.data.model.DetailBook
 import com.example.book_store.databinding.FragmentDetailBinding
+import com.example.book_store.getAppComponent
 import com.example.book_store.ui.catalog.BookApiStatus
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -21,7 +22,7 @@ private const val ARG_TITLE = "isbn13"
 class DetailFragment : Fragment() {
     lateinit var isbn13: String
     private var _binding: FragmentDetailBinding? = null
-    val _viewModel: DetailViewModel by viewModels()
+    val _viewModel: DetailViewModel by viewModels{context?.getAppComponent()!!.detailFactory() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

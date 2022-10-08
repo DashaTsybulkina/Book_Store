@@ -12,10 +12,11 @@ import com.example.book_store.R
 import com.example.book_store.adapter.CartAdapter
 import com.example.book_store.data.model.DetailBook
 import com.example.book_store.databinding.FragmentCartBinding
+import com.example.book_store.getAppComponent
 
 class CartFragment : Fragment() {
 
-    val viewModel: CartViewModel by viewModels()
+    val viewModel: CartViewModel by viewModels{ context?.getAppComponent()!!.cartFactory() }
     private var binding: FragmentCartBinding? = null
 
     override fun onCreateView(

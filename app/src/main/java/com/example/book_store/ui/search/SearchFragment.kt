@@ -18,10 +18,11 @@ import com.example.book_store.adapter.BookCatalogRecyclerAdapter
 import com.example.book_store.adapter.BookClickHandler
 import com.example.book_store.data.model.Book
 import com.example.book_store.databinding.FragmentSearchBinding
+import com.example.book_store.getAppComponent
 import com.example.book_store.ui.catalog.BookApiStatus
 
 class SearchFragment : Fragment(), BookClickHandler {
-    val viewModel: SearchViewModel by viewModels()
+    val viewModel: SearchViewModel by viewModels{context?.getAppComponent()!!.searchFactory() }
     private var binding: FragmentSearchBinding? = null
 
     private var currentPage = 1

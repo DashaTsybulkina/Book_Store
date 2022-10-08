@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Book_Store/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.151" />
         <entry key="..\:/Book_Store/app/src/main/res/drawable/back_text.xml" value="0.151" />
+        <entry key="..\:/Book_Store/app/src/main/res/drawable/button_style.xml" value="0.1865" />
         <entry key="..\:/Book_Store/app/src/main/res/drawable/gradient_background.xml" value="0.15" />
+        <entry key="..\:/Book_Store/app/src/main/res/drawable/ic_baseline_emoji_people_24.xml" value="0.151" />
         <entry key="..\:/Book_Store/app/src/main/res/drawable/ic_connection_error.xml" value="0.2555" />
         <entry key="..\:/Book_Store/app/src/main/res/drawable/ic_rating.xml" value="0.1165" />
         <entry key="..\:/Book_Store/app/src/main/res/drawable/loading_animation.xml" value="0.2545" />

@@ -13,6 +13,7 @@ import com.example.book_store.adapter.CartAdapter
 import com.example.book_store.data.model.DetailBook
 import com.example.book_store.databinding.FragmentCartBinding
 import com.example.book_store.getAppComponent
+import kotlin.math.roundToInt
 
 class CartFragment : Fragment() {
 
@@ -36,6 +37,12 @@ class CartFragment : Fragment() {
 
         viewModel.books.observe(viewLifecycleOwner, Observer<List<DetailBook>> {
             adapter.refreshUsers(it)
+            var sum = 0.0
+            for (book in it){
+                sum += book.count * book.price.substring(1).toFloat()
+            }
+            val roundSum = (sum*100.0).roundToInt().toFloat() / 100.0
+            binding!!.order.text = "К оплате: $roundSum"
         })
     }
 

@@ -11,6 +11,9 @@ interface BooksDao  {
     @Query("DELETE FROM detailBook")
     fun deleteBooks()
 
+    @Query("DELETE FROM detailBook WHERE isbn13 = :isbn13")
+    fun deleteBook(isbn13: String?)
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(book: DetailBook?)
 

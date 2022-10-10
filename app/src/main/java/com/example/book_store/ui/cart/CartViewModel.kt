@@ -28,7 +28,14 @@ class CartViewModel @Inject constructor(val repository: BooksRepository ) : View
     fun updateCount (book:DetailBook, position: Int, value:Int){
         viewModelScope.launch {
             repository.updateCount(book.isbn13, value)
-            _books.value!!.get(position).count = value
+            getBook()
+        }
+    }
+
+    fun deleteItem(book:DetailBook, position: Int){
+        viewModelScope.launch {
+            repository.deleteBook(book.isbn13)
+            getBook()
         }
     }
 }

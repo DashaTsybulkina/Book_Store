@@ -63,6 +63,10 @@ class CartAdapter(private val viewModel: CartViewModel) :
             }
             builder.create().show()
         }
+
+        holder.binding.deleteItem.setOnClickListener{
+            viewModel.deleteItem(books[position], position)
+        }
     }
 
     fun setImage(imageView: ImageView, url: String?) {

@@ -48,5 +48,6 @@
     <string name="sign_up">Зарегистрироваться</string>
     <string name="signUp">ВХОД</string>
 
+    <string name="order" formatted="false">К оформлению : %s</string>
 
 </resources>

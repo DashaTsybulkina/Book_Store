@@ -97,6 +97,26 @@ class BooksRepository @Inject constructor(
         }
     }
 
+    suspend fun deleteBook(isbn13: String) {
+        withContext(ioDispatcher) {
+            try {
+                booksDao.deleteBook(isbn13)
+            } catch (e: Exception) {
+                Log.e("TAG", "failed delete book : ${e.message}")
+            }
+        }
+    }
+
+    suspend fun deleteBooks() {
+        withContext(ioDispatcher) {
+            try {
+                booksDao.deleteBooks()
+            } catch (e: Exception) {
+                Log.e("TAG", "failed delete book : ${e.message}")
+            }
+        }
+    }
+
     fun correctUser(id:Int,email:String, phone: String, firstName:String, lastName:String){
         user.id = id
         user.email = email

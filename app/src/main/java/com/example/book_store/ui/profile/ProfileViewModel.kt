@@ -18,8 +18,11 @@ class ProfileViewModel @Inject constructor(val repository: BooksRepository) : Vi
     }
 
     fun deleteUser(){
-        repository.correctUser(-1, "noRegister@gmail.com", "+375000000000", "first", "last")
-        getUser()
+        viewModelScope.launch {
+            repository.correctUser(-1, "noRegister@gmail.com", "+375000000000", "first", "last")
+            getUser()
+            repository.deleteBooks()
+        }
     }
     fun getUser() {
         _user.value = repository.getUser()

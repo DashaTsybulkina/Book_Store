@@ -6,16 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".ui.cart.CartFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/books_cart"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/ordering"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="630dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/books_cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/ordering"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.666"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtBookName"
+                android:layout_marginTop="5dp"
+                android:padding="8dp"
+                android:text="@string/order"
+                android:textSize="17sp"
+                app:layout_constraintTop_toBottomOf="@+id/books_cart" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <Button
         android:id="@+id/ordering"
@@ -28,6 +55,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/books_cart" />
+        app:layout_constraintTop_toBottomOf="@+id/scroll" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

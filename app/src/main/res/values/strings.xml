@@ -31,6 +31,22 @@
 
     <string name="save_to_cart">Book added to cart</string>
     <string name="ordering">Оформить заказ</string>
+    <string name="phone">Телефон</string>
+    <string name="user_name">Имя</string>
+    <string name="User_lastname">Фамилия</string>
+    <string name="user_patronymic">Отчество</string>
+    <string name="user_e_mail">E-mail</string>
+    <string name="user_password">Пароль</string>
+    <string name="user_password_confirm">Подтвердите пароль</string>
+    <string name="registration">ЗАРЕГИСТРАЦИЯ</string>
+    <string name="login">Введите логин</string>
+    <string name="login_warning">Логин введен неверно</string>
+    <string name="enter_password">Введите пароль</string>
+    <string name="password_warning">Пароль введен неправильно</string>
+    <string name="Sign_in">Войти</string>
+    <string name="SignIn">Вход</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="signUp">ВХОД</string>
 
 
 </resources>

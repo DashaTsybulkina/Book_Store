@@ -3,6 +3,7 @@ package com.example.book_store.data
 import android.util.Log
 import com.example.book_store.data.model.Book
 import com.example.book_store.data.model.DetailBook
+import com.example.book_store.data.model.User
 import com.example.book_store.database.BooksDao
 import com.example.book_store.network.BookService
 import com.example.book_store.network.NewBooksResponse
@@ -14,12 +15,17 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class BooksRepository @Inject constructor(
     private val booksDao: BooksDao,
     private val networkService: BookService
 ) {
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
+    private var user = User()
+
+
 
     suspend fun getBookInfo(isbn13: String): DetailBook =
         withContext(ioDispatcher) {
@@ -89,6 +95,18 @@ class BooksRepository @Inject constructor(
                 Log.e("TAG", "failed update : ${e.message}")
             }
         }
+    }
+
+    fun correctUser(id:Int,email:String, phone: String, firstName:String, lastName:String){
+        user.id = id
+        user.email = email
+        user.phone = phone
+        user.firstName = firstName
+        user.lastName = lastName
+    }
+
+    fun getUser():User{
+        return user
     }
 
     companion object {

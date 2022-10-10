@@ -6,6 +6,9 @@ import com.example.book_store.ui.catalog.BookCatalogFragment
 import com.example.book_store.ui.catalog.BookCatalogViewModelFactory
 import com.example.book_store.ui.detail.DetailFragment
 import com.example.book_store.ui.detail.DetailViewModelFactory
+import com.example.book_store.ui.login.LoginViewModelFactory
+import com.example.book_store.ui.profile.ProfileViewModelFactory
+import com.example.book_store.ui.registration.RegistrationViewModelFactory
 import com.example.book_store.ui.search.SearchFragment
 import com.example.book_store.ui.search.SearchViewModelFactory
 import dagger.Component
@@ -18,8 +21,7 @@ interface DatabaseComponent {
     fun catalogFactory(): BookCatalogViewModelFactory
     fun searchFactory() : SearchViewModelFactory
     fun detailFactory() : DetailViewModelFactory
-//    fun inject(fragment: CartFragment)
-//    fun inject(fragment: BookCatalogFragment)
-//    fun inject(fragment: DetailFragment)
-//    fun inject(fragment: SearchFragment)
+    fun profileFactory() : ProfileViewModelFactory
+    fun registrationFactory() : RegistrationViewModelFactory
+    fun loginFactory() : LoginViewModelFactory
 }

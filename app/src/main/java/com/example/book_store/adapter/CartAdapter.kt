@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.NumberPicker
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -77,7 +75,7 @@ class CartAdapter(private val viewModel: CartViewModel) :
 
     fun refreshUsers(books: List<DetailBook>) {
         this.books = books
-    //    notifyDataSetChanged()
+        notifyDataSetChanged()
     }
 }
 

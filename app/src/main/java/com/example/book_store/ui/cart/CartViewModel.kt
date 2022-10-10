@@ -9,15 +9,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class CartViewModel @Inject constructor(val repository: BooksRepository ) : ViewModel() {
-
-  //  private val repository: BooksRepository
-
     private val _books = MutableLiveData<List<DetailBook>>()
     val books: LiveData<List<DetailBook>> = _books
 
     init {
-//        val bookDB = LocalDB.createDatabase(app).booksDao()
-//        repository = BooksRepository(bookDB)
         getBook()
     }
 

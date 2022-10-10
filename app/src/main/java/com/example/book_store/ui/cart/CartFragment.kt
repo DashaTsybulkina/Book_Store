@@ -39,8 +39,8 @@ class CartFragment : Fragment() {
         })
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onStart() {
+        super.onStart()
         viewModel.getBook()
     }
 

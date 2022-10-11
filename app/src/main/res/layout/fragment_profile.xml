@@ -34,7 +34,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:text="William Snoe"
+                    android:text="@string/unregister"
                     android:textColor="@color/black"
                     android:textSize="21sp"
                     android:textStyle="bold" />
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:paddingLeft="20dp"
-                    android:text="artem.kon2003@mail.ru"
+                    android:text="@string/user_e_mail"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -87,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:paddingLeft="20dp"
-                    android:text="+375445370860"
+                    android:text="@string/your_phone"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -108,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:paddingLeft="20dp"
-                    android:text="г.Минск, ул.Леониды Беды 4к1"
+                    android:text="@string/location"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
@@ -137,17 +137,6 @@
             android:layout_marginRight="20dp"
             android:visibility="invisible"
             android:background="@drawable/button_style"
-            android:text="Вход" />
-
-        <Button
-            android:id="@+id/buttonSignUp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:visibility="invisible"
-            android:background="@drawable/button_style"
-            android:text="Регистрация" />
+            android:text="@string/signIn" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

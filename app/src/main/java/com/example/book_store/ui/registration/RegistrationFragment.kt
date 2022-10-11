@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.book_store.R
-import com.example.book_store.databinding.DialogRegistrationBinding
 import com.example.book_store.databinding.FragmentRegistrationBinding
 import com.example.book_store.getAppComponent
 import com.example.book_store.ui.profile.ProfileViewModel

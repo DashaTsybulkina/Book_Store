@@ -20,15 +20,6 @@ interface BooksDao  {
     @Query("SELECT * FROM detailBook WHERE isbn13 = :isbn13")
     fun getDetailBook(isbn13: String?): DetailBook?
 
-    @Query("SELECT * FROM detailbook ORDER BY price ASC")
-    fun getFavoriteOrderByPrice(): List<DetailBook>
-
-    @Query("SELECT * FROM detailbook ORDER BY rating DESC")
-    fun getFavoriteOrderByRating(): List<DetailBook>
-
-    @Query("SELECT * FROM detailbook ORDER BY year DESC")
-    fun getFavoriteOrderByPublished(): List<DetailBook>
-
     @Query("SELECT * FROM detailBook")
     fun getAllBooks():List<DetailBook>
 

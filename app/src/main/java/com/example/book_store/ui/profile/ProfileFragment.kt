@@ -11,8 +11,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.book_store.R
 import com.example.book_store.data.model.Book
 import com.example.book_store.data.model.User
-import com.example.book_store.databinding.DialogRegistrationBinding
-import com.example.book_store.databinding.FragmentLoginBinding
 import com.example.book_store.databinding.FragmentProfileBinding
 import com.example.book_store.getAppComponent
 import com.example.book_store.ui.catalog.BookCatalogViewModel
@@ -36,11 +34,9 @@ class ProfileFragment : Fragment() {
         viewModel.user.observe(viewLifecycleOwner, Observer<User> {
             if (it.id == -1) {
                 binding!!.buttonSignIn.visibility = View.VISIBLE
-                binding!!.buttonSignUp.visibility = View.VISIBLE
                 binding!!.llProfile.visibility = View.GONE
             } else {
                 binding!!.buttonSignIn.visibility = View.GONE
-                binding!!.buttonSignUp.visibility = View.GONE
                 binding!!.llProfile.visibility = View.VISIBLE
                 binding!!.textEmail.text = it.email
                 binding!!.nameText.text = it.firstName+ it.lastName

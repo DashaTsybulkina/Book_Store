@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">BookStore</string>
+
+    <string name="name_author">Имя автора</string>
+    <string name="name_book">Имя книги</string>
+    <string name="price">Rs. 299</string>
+    <string name="rating">4.5</string>
+    <string name="about_the_book">О книге</string>
+    <string name="add_cart">Добавить в корзину</string>
+
+    <string name="phone">Телефон</string>
+    <string name="user_name">Имя</string>
+    <string name="user_lastname">Фамилия</string>
+    <string name="user_patronymic">Отчество</string>
+    <string name="user_e_mail">E-mail</string>
+    <string name="user_password">Пароль</string>
+    <string name="user_password_confirm">Повторный пороль</string>
+
+    <string name="order">К оплате :</string>
+    <string name="ordering">Оформить заказ</string>
+    <string name="registration">РЕГИСТРАЦИЯ</string>
+    <string name="login">Введите логин</string>
+    <string name="login_warning">Логин введен некоректно</string>
+    <string name="enter_password">Введите пороль</string>
+    <string name="password_warning">Пороль введен некоректно</string>
+    <string name="sign_in">ВХОД</string>
+    <string name="sign_up">Создать аккаунт</string>
+    <string name="signIn">войти</string>
+
+    <string name="location">Минск, Беларусь</string>
+    <string name="your_phone">+375 00 0000000</string>
+    <string name="unregister">Незарегистрированный пользователь</string>
+</resources>

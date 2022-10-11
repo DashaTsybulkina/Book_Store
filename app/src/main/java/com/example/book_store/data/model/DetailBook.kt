@@ -11,11 +11,11 @@ data class DetailBook(
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "isbn13")
-    val isbn13: String,
+    var isbn13: String,
     @ColumnInfo(name = "error")
     val error: String,
     @ColumnInfo(name = "title")
-    val title: String,
+    var title: String,
     @ColumnInfo(name = "authors")
     val authors: String,
     @ColumnInfo(name = "publisher")
@@ -33,7 +33,7 @@ data class DetailBook(
     @ColumnInfo(name = "desc")
     val desc: String,
     @ColumnInfo(name = "price")
-    val price: String,
+    var price: String,
     @ColumnInfo(name = "image")
     val image: String,
     @ColumnInfo(name = "link")

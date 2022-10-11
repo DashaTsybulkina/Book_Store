@@ -42,7 +42,7 @@ class CartFragment : Fragment() {
                 sum += book.count * book.price.substring(1).toFloat()
             }
             val roundSum = (sum*100.0).roundToInt().toFloat() / 100.0
-            binding!!.order.text = "К оплате: $roundSum"
+            binding!!.order.text = getString(R.string.order)+ "$roundSum"
         })
     }
 

@@ -1,53 +1,35 @@
 <resources>
-    <string name="app_name">Book_Store</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">BookStore</string>
+
     <string name="name_author">Name of the Author</string>
     <string name="name_book">Name of the book</string>
     <string name="price">Rs. 299</string>
     <string name="rating">4.5</string>
-    <string name="name_of_the_book">Name of the book</string>
-    <string name="name_of_the_author">Name of the Author</string>
     <string name="about_the_book">About the book</string>
+    <string name="add_cart">Add to cart</string>
 
-    <string name="book_info">BOOK INFORMATION</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-    <string name="website">WebSite</string>
-    <string name="liked_on">Like</string>
-    <string name="liked_off">unLike</string>
-    <string name="memo">memo</string>
-
-    <string name="price_of_book" formatted="false">Price : %s</string>
-    <string name="rating_of_book" formatted="false">Rating : %s</string>
-    <string name="authors" formatted="false">Authors : %s</string>
-    <string name="year" formatted="false">Published : %s</string>
-    <string name="pages" formatted="false">Authors : %s</string>
-    <string name="language" formatted="false">Language : %s</string>
-    <string name="isbn10" formatted="false">isbn10 : %s</string>
-    <string name="isbn13" formatted="false">isbn13 : %s</string>
-    <string name="desc" formatted="false">Description : %s</string>
-    <string name="add_cart">Add to basket</string>
-
-    <string name="save_to_cart">Book added to cart</string>
-    <string name="ordering">Оформить заказ</string>
-    <string name="phone">Телефон</string>
-    <string name="user_name">Имя</string>
-    <string name="User_lastname">Фамилия</string>
-    <string name="user_patronymic">Отчество</string>
+    <string name="phone">Phone</string>
+    <string name="user_name">UserName</string>
+    <string name="user_lastname">LastName</string>
+    <string name="user_patronymic">Patronymic</string>
     <string name="user_e_mail">E-mail</string>
-    <string name="user_password">Пароль</string>
-    <string name="user_password_confirm">Подтвердите пароль</string>
-    <string name="registration">ЗАРЕГИСТРАЦИЯ</string>
-    <string name="login">Введите логин</string>
-    <string name="login_warning">Логин введен неверно</string>
-    <string name="enter_password">Введите пароль</string>
-    <string name="password_warning">Пароль введен неправильно</string>
-    <string name="Sign_in">Войти</string>
-    <string name="SignIn">Вход</string>
-    <string name="sign_up">Зарегистрироваться</string>
-    <string name="signUp">ВХОД</string>
+    <string name="user_password">Password</string>
+    <string name="user_password_confirm">PasswordConfirm</string>
 
-    <string name="order" formatted="false">К оформлению : %s</string>
+    <string name="order">To design :</string>
+    <string name="ordering">Place an order</string>
+    <string name="registration">REGISTRATION</string>
+    <string name="login">Enter login</string>
+    <string name="login_warning">Login was entered incorrectly</string>
+    <string name="enter_password">Enter password</string>
+    <string name="password_warning">Password was entered incorrectly</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Create account</string>
+    <string name="signIn">Sign In</string>
+
+    <string name="location">Minsk, Belarus</string>
+    <string name="your_phone">+375 00 0000000</string>
+    <string name="unregister">Unregister user</string>
+
 
 </resources>

@@ -30,6 +30,15 @@
     <string name="location">Minsk, Belarus</string>
     <string name="your_phone">+375 00 0000000</string>
     <string name="unregister">Unregister user</string>
+    <string name="text_wey_get">Choose tne method of receiving the goods</string>
+    <string name="text_pickup">Pickup  0,00 BYN</string>
+    <string name="text_delivery">Delivery in the city 300,00 BYN</string>
+    <string name="text_delivery_county">Delivery throughout Belarus 500,00 BYN</string>
+    <string name="text_delivery_post_office">By Belarus Post 400,00 BYN</string>
+    <string name="text_address">Address</string>
+    <string name="text_card">Card</string>
+    <string name="text_comment">Comment</string>
+    <string name="button_order">Make an order</string>
 
 
 </resources>

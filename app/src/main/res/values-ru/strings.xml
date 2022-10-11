@@ -30,4 +30,13 @@
     <string name="location">Минск, Беларусь</string>
     <string name="your_phone">+375 00 0000000</string>
     <string name="unregister">Незарегистрированный пользователь</string>
+    <string name="text_wey_get">Выберите способ получения товара</string>
+    <string name="text_pickup">Самовызов   0,00 BYN</string>
+    <string name="text_delivery">Доставка по городу   300,00 BYN</string>
+    <string name="text_delivery_county">Доставка по всей Беларуси  500,00 BYN</string>
+    <string name="text_delivery_post_office">Почтой Беларуси   400,00 BYN</string>
+    <string name="text_address">Адрес</string>
+    <string name="text_card">Карта</string>
+    <string name="text_comment">Комментарий</string>
+    <string name="button_order">Сделать заказ</string>
 </resources>

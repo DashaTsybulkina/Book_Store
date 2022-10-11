@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.book_store.R
 import com.example.book_store.adapter.CartAdapter
@@ -44,6 +45,10 @@ class CartFragment : Fragment() {
             val roundSum = (sum*100.0).roundToInt().toFloat() / 100.0
             binding!!.order.text = getString(R.string.order)+ "$roundSum"
         })
+
+        binding!!.ordering.setOnClickListener{
+            findNavController().navigate(R.id.orderFragment)
+        }
     }
 
     override fun onStart() {

@@ -39,4 +39,9 @@
     <string name="text_card">Карта</string>
     <string name="text_comment">Комментарий</string>
     <string name="button_order">Сделать заказ</string>
+
+
+    <string name="error_order">"Вы не можете оформить заказ\n войдите в аккаунт"</string>
+
+
 </resources>

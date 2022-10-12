@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -18,7 +19,7 @@ import kotlin.math.roundToInt
 
 class CartFragment : Fragment() {
 
-    val viewModel: CartViewModel by viewModels{ context?.getAppComponent()!!.cartFactory() }
+    val viewModel: CartViewModel by viewModels { context?.getAppComponent()!!.cartFactory() }
     private var binding: FragmentCartBinding? = null
 
     override fun onCreateView(
@@ -39,21 +40,30 @@ class CartFragment : Fragment() {
         viewModel.books.observe(viewLifecycleOwner, Observer<List<DetailBook>> {
             adapter.refreshUsers(it)
             var sum = 0.0
-            for (book in it){
+            for (book in it) {
                 sum += book.count * book.price.substring(1).toFloat()
             }
-            val roundSum = (sum*100.0).roundToInt().toFloat() / 100.0
-            binding!!.order.text = getString(R.string.order)+ "$roundSum"
+            val roundSum = (sum * 100.0).roundToInt().toFloat() / 100.0
+            binding!!.order.text = getString(R.string.order) + "$roundSum"
         })
 
-        binding!!.ordering.setOnClickListener{
-            findNavController().navigate(R.id.orderFragment)
+        binding!!.ordering.setOnClickListener {
+            if (viewModel.user.value?.id != -1) {
+                findNavController().navigate(R.id.orderFragment)
+            } else {
+                Toast.makeText(
+                    context,
+                    getString(R.string.error_order),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 
     override fun onStart() {
         super.onStart()
         viewModel.getBook()
+        viewModel.getUser()
     }
 
     override fun onDestroyView() {

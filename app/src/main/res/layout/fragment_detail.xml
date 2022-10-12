@@ -59,13 +59,20 @@
                 android:textStyle="italic"
                 android:textColor="@color/pink" />
 
+            <TextView
+                android:id="@+id/textLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:text="text" />
+
             <Button
                 android:id="@+id/buttonDetailBuy"
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
                 android:background="@color/pink"
                 android:text="@string/add_cart"
-                android:textColor="#616161" />
+                android:textColor="#78909C" />
 
         </LinearLayout>
     </ScrollView>

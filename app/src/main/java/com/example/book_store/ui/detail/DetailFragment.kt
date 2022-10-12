@@ -1,5 +1,7 @@
 package com.example.book_store.ui.detail
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -56,7 +58,13 @@ class DetailFragment : Fragment() {
             _binding!!.txtDetailAuthor.text = it.authors
             _binding!!.txtDetailPrice.text = it.price
             _binding!!.txtDetailAboutBook.text = it.desc
+            _binding!!.textLink.text = it.link
         })
+
+        _binding!!.textLink.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(_viewModel.book.value?.link))
+            startActivity(intent)
+        }
 
         _viewModel.status.observe(viewLifecycleOwner, Observer<BookApiStatus> {
             when(it){

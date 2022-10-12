@@ -40,5 +40,7 @@
     <string name="text_comment">Comment</string>
     <string name="button_order">Make an order</string>
 
+    <string name="error_order">"You can't place an order \n log in to your account"</string>
+
 
 </resources>

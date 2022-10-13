@@ -52,7 +52,7 @@ class CartAdapter(private val viewModel: CartViewModel) :
             picker.maxValue = 100
             val builder = AlertDialog.Builder(holder.binding.imgBookImage.context)
             builder.setView(picker)
-            builder.setTitle("Changing the Hue")
+            builder.setTitle("Changing the count")
             builder.setMessage("Choose a value :")
             builder.setPositiveButton(
                 "OK"

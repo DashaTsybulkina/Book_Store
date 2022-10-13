@@ -41,7 +41,7 @@
     <string name="button_order">Сделать заказ</string>
 
 
-    <string name="error_order">"Вы не можете оформить заказ\n войдите в аккаунт"</string>
-
+    <string name="error_order">Вы не можете оформить заказ\n войдите в аккаунт</string>
+    <string name="in_cart">В корзине</string>
 
 </resources>

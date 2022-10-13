@@ -8,6 +8,7 @@ import com.example.book_store.data.model.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlin.math.roundToInt
 
 class CartViewModel @Inject constructor(val repository: BooksRepository ) : ViewModel() {
     private val _books = MutableLiveData<List<DetailBook>>()
@@ -29,9 +30,17 @@ class CartViewModel @Inject constructor(val repository: BooksRepository ) : View
         viewModelScope.launch {
             val listResult = repository.getBooksCart()
             if (listResult != null){
-                _books.value = listResult!!
+                setBooks(listResult)
             }
         }
+    }
+
+    fun getSum():Double{
+        var sum = 0.0
+        for (book in _books.value!!) {
+            sum += book.count * book.price.substring(1).toFloat()
+        }
+        return (sum * 100.0).roundToInt().toFloat() / 100.0
     }
 
     fun updateCount (book:DetailBook, position: Int, value:Int){
@@ -46,5 +55,9 @@ class CartViewModel @Inject constructor(val repository: BooksRepository ) : View
             repository.deleteBook(book.isbn13)
             getBook()
         }
+    }
+
+    fun setBooks(books:List<DetailBook>){
+        _books.value = books
     }
 }

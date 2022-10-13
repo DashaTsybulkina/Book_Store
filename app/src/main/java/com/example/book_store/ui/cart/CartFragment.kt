@@ -39,11 +39,7 @@ class CartFragment : Fragment() {
 
         viewModel.books.observe(viewLifecycleOwner, Observer<List<DetailBook>> {
             adapter.refreshUsers(it)
-            var sum = 0.0
-            for (book in it) {
-                sum += book.count * book.price.substring(1).toFloat()
-            }
-            val roundSum = (sum * 100.0).roundToInt().toFloat() / 100.0
+            val roundSum = viewModel.getSum()
             binding!!.order.text = getString(R.string.order) + "$roundSum"
         })
 

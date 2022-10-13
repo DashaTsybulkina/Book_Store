@@ -4,6 +4,7 @@ plugins {
     id 'org.jetbrains.kotlin.android.extensions'
     id 'kotlin-kapt'
     id 'com.google.gms.google-services'
+    id 'com.google.firebase.appdistribution'
 }
 
 android {
@@ -42,6 +43,9 @@ android {
 }
 
 dependencies {
+    androidTestImplementation "android.arch.core:core-testing:1.1.0"
+    implementation "org.mockito:mockito-core:2.19.0"
+
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'

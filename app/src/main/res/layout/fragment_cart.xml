@@ -8,8 +8,8 @@
 
     <ScrollView
         android:id="@+id/scroll"
-        android:layout_width="match_parent"
-        android:layout_height="630dp"
+        android:layout_width="395dp"
+        android:layout_height="600dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -49,6 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="70dp"
         android:background="@color/pink"
         android:text="@string/ordering"

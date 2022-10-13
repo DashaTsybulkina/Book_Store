@@ -59,7 +59,11 @@ class DetailFragment : Fragment() {
             _binding!!.txtDetailPrice.text = it.price
             _binding!!.txtDetailAboutBook.text = it.desc
             _binding!!.textLink.text = it.link
+            if(it.isAddCart){
+                _binding!!.buttonDetailBuy.text = getString(R.string.in_cart)
+            }
         })
+
 
         _binding!!.textLink.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(_viewModel.book.value?.link))
@@ -85,6 +89,7 @@ class DetailFragment : Fragment() {
         _binding!!.buttonDetailBuy.setOnClickListener {
             _viewModel.saveBook()
             Toast.makeText(context, "Book added to cart", Toast.LENGTH_SHORT).show()
+            _binding!!.buttonDetailBuy.text = getString(R.string.in_cart)
         }
     }
 

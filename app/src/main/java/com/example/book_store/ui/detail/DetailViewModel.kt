@@ -35,6 +35,7 @@ class DetailViewModel@Inject constructor(val repository: BooksRepository) :ViewM
 
     fun saveBook (){
         _book.value!!.count  = 1
+        _book.value!!.isAddCart = true
         val book = _book.value
         if (book != null) {
             viewModelScope.launch {
